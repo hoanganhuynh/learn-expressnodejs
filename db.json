@@ -17,7 +17,9 @@
     {
       "name": "Hoang An Huynh",
       "phone": "0327846162",
-      "id": "2OIKGjhIC"
+      "id": "2OIKGjhIC",
+      "email": "info@coders.tokyo",
+      "password": "12345"
     }
   ]
 }
