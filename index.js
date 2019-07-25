@@ -6,6 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const userRoute = require('./routes/user.route');
+const productRoute = require('./routes/product.route');
 const authRoute = require('./routes/auth.route');
 
 var authMiddleware = require('./middlewares/auth.middleware');
@@ -27,7 +28,7 @@ app.get('/', function(req, res) {
         name: 'Hoang An'
     });
 });
-
+app.use('/products', productRoute);
 app.use('/users', authMiddleware.requireAuth, userRoute);
 app.use('/auth', authRoute);
 

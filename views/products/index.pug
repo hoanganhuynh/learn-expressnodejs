@@ -1,0 +1,23 @@
+extends ../layouts/common
+
+block content
+    h1
+        span.mr-2 Product
+        a.btn.btn-success(href="/products/create") New
+
+    .d-flex.align-items-center
+        form.ml-auto(action="/products/search", method="GET", class="d-flex m-2")
+            input(type="text", name="q", class="form-control m-2")
+            button(class="btn btn-primary m-2") Search
+
+    .container   
+        .row.d-flex.justify-content-center
+            each product in products
+                .card.m-3(style='width: 15rem;')
+                    img.card-img-top(src= product.image)
+                    .card-body
+                        h5.card-title= product.name
+                        p.card-text= product.description
+                        a.btn.btn-primary(href='#') Add to card
+
+    
