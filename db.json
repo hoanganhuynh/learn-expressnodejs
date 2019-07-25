@@ -640,5 +640,14 @@
       "description": "test",
       "id": "wUdCo6JYh"
     }
+  ],
+  "sessions": [
+    {
+      "id": "4ZNdOHCqI",
+      "cart": {
+        "e86d1554-774f-4901-8653-9a2ac1ec7e25": 3,
+        "a01cd12f-f17d-49c2-9967-5e1bac17a694": 1
+      }
+    }
   ]
 }
