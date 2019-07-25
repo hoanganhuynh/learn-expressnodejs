@@ -3,10 +3,24 @@ const shortid = require('shortid');
 
 
 module.exports.index = function(req, res) {
+    var page = parseInt(req.query.page) || 1; // n
+    var perPage = 8; // x
+
+    var start = (page -1) * perPage;
+    var end = page * perPage;
+
+    // cách 2: Su dung lodash.com
+    // var drop = (page -1) * perPage;
     res.render('products/index', {
-        products: db.get('products').value()
+        products: db.get('products').value().slice(start, end)
+        // tiep cach 2:
+        // products: db.get('products').drop(drop).take(perPage).value()
     });
 };
+
+
+
+
 
 module.exports.search = function(req, res) {
     let q = req.query.q;
