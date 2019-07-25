@@ -34,6 +34,7 @@ module.exports.get = function(req, res) {
 
 module.exports.postCreate = function(req, res) {
     req.body.id = shortid.generate();
+    req.body.avatar = req.file.path.split('/').slice(1).join('/');
 
     console.log(req.body); // xem log ra gi
     console.log(res.locals);
